@@ -7,23 +7,13 @@ sap.ui.define([
 
 	return Controller.extend("com.mvn.util.controller.Test", {
 		onInit: function () {
-            // var oData = {
-            //     sOldDestinationDsPayload : "",
-            //     sOldDestinationPPayload : "",
-            //     sSourceDsPayload : "",
-            //     sSourcePPayload : "",
-            //     sAjaxDataStoreUrl :"/asint/idms/v1/configuration/equipment/template/*sEquipmentTemplateId*/location/template/*sLocationTemplateId*/data?equipmentTemplateVersion=*sEquipmentTemplateVersion*&uomsystem=metric",
-            //     sAjaxPersonaUrl :"/asint/idms/v1/configuration/equipment/template/*sEquipmentTemplateId*/location/template/*sLocationTemplateId*/persona/*sPersonaId*/data?equipmentTemplateVersion=*sEquipmentTemplateVersion*&uomsystem=metric",
-            //     sAjaxCallTemplate : "$.ajax({ type: 'POST', url: '*url*', contentType: 'application/json', data: '*payload*', }).done(function () { console.log('SUCCESS'); }).fail(function (msg) { console.log('FAIL'); }).always(function (msg) { console.log('ALWAYS'); });",
-            //     sPayload : ""
-            // };
             var oData = {
                 sOldDestinationDsPayload : "",
                 sOldDestinationPPayload : "",
                 sSourceDsPayload : "",
                 sSourcePPayload : "",
-                sAjaxDataStoreUrl :"/asint/idms/v1/configuration/functionallocation/template/*sEquipmentTemplateId*/location/template/*sLocationTemplateId*/data?equipmentTemplateVersion=*sEquipmentTemplateVersion*&uomsystem=metric",
-                sAjaxPersonaUrl :"/asint/idms/v1/configuration/functionallocation/template/*sEquipmentTemplateId*/location/template/*sLocationTemplateId*/persona/*sPersonaId*/data?equipmentTemplateVersion=*sEquipmentTemplateVersion*&uomsystem=metric",
+                sAjaxDataStoreUrl :"/asint/idms/v1/configuration/equipment/template/*sEquipmentTemplateId*/location/template/*sLocationTemplateId*/data?equipmentTemplateVersion=*sEquipmentTemplateVersion*&uomsystem=metric",
+                sAjaxPersonaUrl :"/asint/idms/v1/configuration/equipment/template/*sEquipmentTemplateId*/location/template/*sLocationTemplateId*/persona/*sPersonaId*/data?equipmentTemplateVersion=*sEquipmentTemplateVersion*&uomsystem=metric",
                 sAjaxCallTemplate : "$.ajax({ type: 'POST', url: '*url*', contentType: 'application/json', data: '*payload*', }).done(function () { console.log('SUCCESS'); }).fail(function (msg) { console.log('FAIL'); }).always(function (msg) { console.log('ALWAYS'); });",
                 sPayload : ""
             };
