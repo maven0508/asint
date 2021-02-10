@@ -35,7 +35,7 @@
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "com.mvn.util.view.Test",
+			"viewName": "com.mvn.util.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "App"

@@ -1,10 +1,89 @@
-<mvc:View controllerName="com.mvn.util.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content></content>
-				</Page>
-			</pages>
-		</App>
+<mvc:View controllerName="com.mvn.util.controller.App" xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<uxap:ObjectPageLayout id="ObjectPageLayout" showAnchorBarPopover="false" upperCaseAnchorBar="false">
+			<uxap:headerTitle>
+				<uxap:ObjectPageDynamicHeaderTitle>
+					<uxap:heading>
+						<Title text="{i18n>title}" />
+					</uxap:heading>
+					<uxap:actions>
+						<uxap:ObjectPageHeaderActionButton icon="sap-icon://reset" type="Transparent" press="onUiAction('reset')" />
+						<Switch state="{mDataStore>/sMode}" customTextOn="EQU" customTextOff="FL"/>
+						<uxap:ObjectPageHeaderActionButton icon="sap-icon://settings" text="{i18n>generate}" hideText="false" press="onUiAction('generatePayload')" type="Emphasized" />
+						<uxap:ObjectPageHeaderActionButton icon="sap-icon://copy" text="{i18n>copy}" press="onUiAction('copyPayload')" hideText="true" type="Emphasized" />
+					</uxap:actions>
+				</uxap:ObjectPageDynamicHeaderTitle>
+			</uxap:headerTitle>
+			<uxap:headerContent>
+				<HBox justifyContent="Center" alignItems="Center">
+					<uxap:ObjectPageHeaderActionButton text="{i18n>back}" type="Emphasized" hideText="false" class="sapUiLargeMarginEnd" />
+					<ComboBox items="{mDataStore>/aClient}">
+						<core:Item key="{mDataStore>key}" text="{mDataStore>key}" />
+					</ComboBox>
+					<Label class="sapUiLargeMarginBeginEnd" text="{i18n>to}"></Label>
+					<ComboBox items="{mDataStore>/aClient}">
+						<core:Item key="{mDataStore>key}" text="{mDataStore>key}" />
+					</ComboBox>
+					<uxap:ObjectPageHeaderActionButton text="{i18n>next}" type="Emphasized" hideText="false" class="sapUiLargeMarginBegin" />
+				</HBox>
+			</uxap:headerContent>
+			<uxap:sections>
+				<uxap:ObjectPageSection titleUppercase="false" title="{i18n>source}">
+					<uxap:subSections>
+						<uxap:ObjectPageSubSection titleUppercase="false">
+							<uxap:blocks>
+								<VBox>
+									<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="3" singleContainerFullSize="false">
+										<f:content>
+											<core:Title text="{i18n>datastore}" />
+											<TextArea value="{mDataStore>/sSourceDataStore}" rows="4" width="100%" />
+											<core:Title text="{i18n>definitionPersona}" />
+											<TextArea value="{mDataStore>/sSourceDefinition}" rows="4" width="100%" />
+											<core:Title text="{i18n>readingPersona}" />
+											<TextArea value="{mDataStore>/sSourceReading}" rows="4" width="100%" />
+										</f:content>
+									</f:SimpleForm>
+								</VBox>
+							</uxap:blocks>
+						</uxap:ObjectPageSubSection>
+					</uxap:subSections>
+				</uxap:ObjectPageSection>
+				<uxap:ObjectPageSection titleUppercase="false" title="{i18n>destination}">
+					<uxap:subSections>
+						<uxap:ObjectPageSubSection titleUppercase="false">
+							<uxap:blocks>
+								<VBox>
+									<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="3" singleContainerFullSize="false">
+										<f:content>
+											<core:Title text="{i18n>datastore}" />
+											<TextArea value="{mDataStore>/sDestinationDataStore}" rows="4" width="100%" />
+											<core:Title text="{i18n>definitionPersona}" />
+											<TextArea value="{mDataStore>/sDestinationDefinition}" rows="4" width="100%" />
+											<core:Title text="{i18n>readingPersona}" />
+											<TextArea value="{mDataStore>/sDestinationReading}" rows="4" width="100%" />
+										</f:content>
+									</f:SimpleForm>
+								</VBox>
+							</uxap:blocks>
+						</uxap:ObjectPageSubSection>
+					</uxap:subSections>
+				</uxap:ObjectPageSection>
+				<uxap:ObjectPageSection titleUppercase="false" title="{i18n>result}">
+					<uxap:subSections>
+						<uxap:ObjectPageSubSection titleUppercase="false">
+							<uxap:blocks>
+								<VBox>
+									<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+										<f:content>
+											<TextArea value="{mDataStore>/sPayload}" rows="25" width="100%" />
+										</f:content>
+									</f:SimpleForm>
+								</VBox>
+							</uxap:blocks>
+						</uxap:ObjectPageSubSection>
+					</uxap:subSections>
+				</uxap:ObjectPageSection>
+			</uxap:sections>
+		</uxap:ObjectPageLayout>
+	</App>
 </mvc:View>
-
