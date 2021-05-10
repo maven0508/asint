@@ -78,7 +78,8 @@ sap.ui.define([
 				oDatastore: {
 					locationTemplateId: "",
 					dataSourceList: [],
-					objectType: ""
+					objectType: "",	
+					readingCount : 0
 				},
 				oDefinition: {
 					refList: [],
