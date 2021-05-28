@@ -8,6 +8,7 @@ sap.ui.define([
 	return Controller.extend("com.mvn.util.controller.App", {
 		onInit: function () {
 			var oData = {
+				sType : false,
 				sMode : true,
 				aClient : [{ key : "Asint DEV" },{ key : "Asint QA" },{ key : "Indorama" },{ key : "Covestro" }],
 				sSourceDataStore: "",
@@ -106,7 +107,7 @@ sap.ui.define([
 			// Override Destination Datasource and Object Type
 			oTemp.oDatastore.locationTemplateId = oTemp.oDestinationDatastore.locationTemplateId;
 			oTemp.oDatastore.dataSourceList = oTemp.oSourceDatastore.dataSourceList;
-			oTemp.oDatastore.objectType = oTemp.oSourceDatastore.objectType;
+			oTemp.oDatastore.objectType = sEquFl === "equipment" ? "EQU" : "FL";
 
 			// Override Destiation Definition Persona {apiList, refList, sectionList}
 			oTemp.oDefinition.apiList = oTemp.oSourceDefinition.personaDetail.apiList;
@@ -169,11 +170,13 @@ sap.ui.define([
 			sTemp = sTemp.replace("*payload*", JSON.stringify(oTemp.oDefinition));
 			mModel.setProperty("/sPayload", mModel.getProperty("/sPayload") + sTemp);
 
+			if(mModel.getProperty("/sType")){
 			sTemp = "";
 			sTemp = mModel.getProperty("/sAjaxCallTemplate");
 			sTemp = sTemp.replace("*url*", mModel.getProperty("/sAjaxReadingPersonaUrl"));
 			sTemp = sTemp.replace("*payload*", JSON.stringify(oTemp.oReading));
 			mModel.setProperty("/sPayload", mModel.getProperty("/sPayload") + sTemp);
+			}
 
 		}
 	});
