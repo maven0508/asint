@@ -9,7 +9,7 @@
 					<uxap:actions>
 						<uxap:ObjectPageHeaderActionButton icon="sap-icon://reset" type="Transparent" press="onUiAction('reset')" />
 						<Switch state="{mDataStore>/sMode}" customTextOn="EQU" customTextOff="FL"/>
-						<Switch state="{mDataStore>/sType}" customTextOn="DEF1ly" customTextOff="DEF+RED"/>
+						<Switch state="{mDataStore>/sType}" customTextOn="DR" customTextOff="D"/>
 						<uxap:ObjectPageHeaderActionButton icon="sap-icon://settings" text="{i18n>generate}" hideText="false" press="onUiAction('generatePayload')" type="Emphasized" />
 						<uxap:ObjectPageHeaderActionButton icon="sap-icon://copy" text="{i18n>copy}" press="onUiAction('copyPayload')" hideText="true" type="Emphasized" />
 					</uxap:actions>
