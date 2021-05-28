@@ -8,7 +8,7 @@ sap.ui.define([
 	return Controller.extend("com.mvn.util.controller.App", {
 		onInit: function () {
 			var oData = {
-				sType : false,
+				sType : true,
 				sMode : true,
 				aClient : [{ key : "Asint DEV" },{ key : "Asint QA" },{ key : "Indorama" },{ key : "Covestro" }],
 				sSourceDataStore: "",
